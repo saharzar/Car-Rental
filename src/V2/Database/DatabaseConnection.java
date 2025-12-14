@@ -1,0 +1,18 @@
+package V2.Database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DatabaseConnection {
+   //jdbc:oracle:thin:@HOST:PORT:SID
+    private static final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
+
+    private static final String USER = "caruser";  // the new user you created
+    private static final String PASS = "carpass";
+
+
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASS);
+    }
+}
